@@ -1,0 +1,41 @@
+
+<div class="card" *ngFor='let book of books | async ; let i = index'>                                     
+    <div class="col-sm-6 col-xs-12 col-lg-3 col-md-3">
+        <div class="my-list">
+            <img [src]="book?.cover" height="230" width="40" alt="bookpic" />
+            <div class="detail">
+                <div class="content">
+            <a (click)="addtoCart(i)" class="btn btn-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <a href="#{{book?.id}}" class="btn btn-info">Details</a>
+            </div></div>
+        </div>
+        <h5>{{book?.title}}</h5>
+        <span style="font-size : 12px;">by {{book?.author}}</span> <span class="pull right">{{book?.price | currency}}</span>
+  </div></div>
+  <div *ngFor='let book of books | async ; let i = index'>                                         
+  <div id="pop">
+    <div id="{{book?.id}}" class="overlay popup1">
+      <div class="popup" id="dialog">
+        <div class="col-md-6 product_img">
+            <img [src]="book?.cover" height="350" width="200" class="img-responsive">
+        </div>
+          <h2>{{book?.title}}</h2>
+          <h4>by {{book?.author}}</h4> 
+          <a class="close" href="#">×</a>
+          <div class="pcontent">
+              <p>{{book?.description}}
+            </p>
+          </div>
+          <h4>{{book?.price | currency}}</h4> 
+          <h4>{{book?.categories}}</h4>
+          <div class="categories"></div>                        
+          <footer>
+          <button class="btn btn-info" (click)="addtoCart(i)">Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>                          
+          <a [routerLink]="['/comments', book.title]" class="btn btn-info">Reviews</a>                          
+          <a href="#" class="btn btn-info">Close</a>
+          
+        </footer> 
+    </div>    
+    </div>
+  </div>
+</div>                                                        

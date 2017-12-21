@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Sign Up with your email</h2>
+  <form name="form" (ngSubmit)="signup()" #f="ngForm" novalidate>
+          <label for="username">Email</label>
+          <input type="text" class="form-control" name="mail" [(ngModel)]="email" #mail="ngModel" required />
+          <div *ngIf="mail.touched && !mail.valid" class="alert alert-danger">Email is required</div>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="pass" [(ngModel)]="password" #pass="ngModel" minlength="6" maxlength="25" required />
+          <div *ngIf="pass.touched && !pass.valid" class="alert alert-danger">
+            <div *ngIf="pass.errors.required">Password is required</div>
+            <div *ngIf="pass.errors.minlength">Password should not be less than 6 characters long</div>
+      </div>
+          <button [disabled]="loading" class="btn">Register</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <a [routerLink]="['/login']" class="btn">Cancel</a>
+  </form>
+</div>

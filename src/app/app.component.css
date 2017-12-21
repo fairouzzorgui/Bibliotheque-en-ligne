@@ -1,0 +1,42 @@
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    
+}
+body,
+html { 
+    height: 100%;
+}
+
+fa {
+
+    color: lightgray;
+}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+
+.title {
+    padding-left: 30px;    
+    /*    color: rgb(0, 255, 132);*/
+    color: rgb(90, 86, 86);
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;    
+}
+
+#page-content-wrapper {
+    padding-top: 15px;
+    padding-left: 240px;
+    align-content: center;    
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+}
+

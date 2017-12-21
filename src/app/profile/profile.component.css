@@ -1,0 +1,22 @@
+.btn {
+
+    border-radius: 0px;
+    border : 0px;
+    color: black;
+    background-color: rgb(0, 255, 132);
+}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+.container {
+    border: 0px;
+    outline: 0;
+    margin-top: 50px;
+    border-radius: 0px; 
+}

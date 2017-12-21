@@ -1,0 +1,52 @@
+<div class="container"  > 
+    <div class="row">
+      <div class="col-md-8">
+        <h3 class="page-header"> {{title}} Reviews</h3>
+          <section class="comment-list" *ngFor="let review of reviews | async" >
+            <article class="row" *ngIf="condition(review)">
+              <div class="col-md-2 col-sm-2 hidden-xs">
+                <figure class="thumbnail">
+                  <img class="img-responsive" [src]="review?.avatar" height="50" width="50" />
+                </figure>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <header class="text-left">
+                      <div class="comment-user"><i class="fa fa-user" style="color:rgb(0, 255, 132)"></i>{{review?.user}}</div>
+                      <!--datetime="{{review?.date}}"-->      <time class="comment-date" ><i class="fa fa-clock-o" style="color:rgb(0, 255, 132)"></i>{{review?.date}}</time>
+                    </header>
+                    <div class="comment-post">
+                      <p>
+                           {{review?.content}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+  
+          </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      
+      <div class="row">
+      
+      <div class="col-md-6">
+                              <div class="widget-area no-padding blank">
+                                  <div class="status-upload">
+                                      <form #f="ngForm" (ngSubmit)="getValue()">
+                                          <textarea [(ngModel)]="review.content" #comment="ngModel" name="comment" placeholder="Tell us your thoughts about this book" ></textarea>
+                                          <button type="submit" class="button" > Submit</button>
+                                    <!--find how to add the comment-->
+                                        </form>
+                                  </div><!-- Status Upload  -->
+                              </div><!-- Widget Area -->
+                          </div>
+          
+      </div>
+  </div>
+<!--</div>-->
