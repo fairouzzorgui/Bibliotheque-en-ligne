@@ -2,6 +2,10 @@
 # Bibliotheque-en-ligne
 TP Proc Unifiés, RT4 Groupe 1, Zorgui Fairouz, Bouchami Wafa, Mezni Yesmine
 =======
+# Remarque : 
+L'ajout de livres au panier se fait sans authentification : seule le paiement en nécessite une. Mais lorsque le navigateur est
+fermé, le panier sera automatiquement vidé.
+
 # BibliothequeEnLigne
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
