@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service : CartService) { }
 
   ngOnInit() {
+  }
+
+  @HostListener('window:unload') 
+  unloadHandler() {
+    this._service.deleteAll();
   }
 
 }

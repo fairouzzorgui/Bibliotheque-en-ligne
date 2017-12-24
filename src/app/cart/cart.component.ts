@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
 import { Cart } from './cart';
 import { FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2/database-deprecated';
+import { HostListener } from '@angular/core';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2/dat
   providers : [AuthService,CartService]
 })
 export class CartComponent implements OnInit {
+
   items : FirebaseListObservable<Cart[]>;
   itemlist : Cart[];  
   itemo : FirebaseObjectObservable<Cart>;
@@ -46,6 +48,10 @@ export class CartComponent implements OnInit {
     this._service.deleteItem(item.$key);
 
   }
-
+  
+  @HostListener('window:unload') 
+  unloadHandler() {
+    this._service.deleteAll();
+  }
     
 }

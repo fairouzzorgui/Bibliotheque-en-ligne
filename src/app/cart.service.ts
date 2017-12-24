@@ -23,7 +23,8 @@ export class CartService {
   }
 
   createItem(item: Cart): void  {
-    this.items.push(item)
+    this.items.push(
+      item);
                 //.catch(error => this.handleError(error))
   }
 

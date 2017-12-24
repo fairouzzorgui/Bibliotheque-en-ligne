@@ -10,7 +10,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RightbarComponent } from './rightbar/rightbar.component'
 import { HttpModule } from '@angular/http';
 import { AboutComponent } from './about/about.component';
-import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { RouterModule} from '@angular/router';
 import {ReviewsService } from './reviews.service';
@@ -25,6 +24,8 @@ import {AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { SearchPipe } from './search/searchpipe';
+import { SearchService } from './search.service';
 
 
 export const firebaseConfig = {
@@ -43,13 +44,13 @@ export const firebaseConfig = {
     NavbarComponent,
     RightbarComponent,
     AboutComponent,
-    ProfileComponent,
     CartComponent,
     NofoundComponent,
     CommentsComponent,
     LoginComponent,
     RegisterComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule, AngularFontAwesomeModule,HttpModule,FormsModule,AngularFireAuthModule,AngularFireDatabaseModule,AngularFireModule.initializeApp(firebaseConfig), 
@@ -61,14 +62,13 @@ export const firebaseConfig = {
       {path : "register", component : RegisterComponent },
       {path : "comments/:title", component : CommentsComponent},
       {path : "cart", component : CartComponent },
-      {path : "profile", component : ProfileComponent },
       {path : "", component : BookcardComponent },
       {path : "**", component : NofoundComponent }      
       
     ])
   ],
   providers: [
-    BookService, ReviewsService, AuthService],
+    BookService, ReviewsService, AuthService,SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
